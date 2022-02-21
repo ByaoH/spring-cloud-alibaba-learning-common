@@ -11,14 +11,22 @@ import com.byaoh.cloud.common.web.BaseResultCode;
 public class ApiException extends RuntimeException {
 	private static final long serialVersionUID = -4566943994764734808L;
 	private final BaseResultCode code;
-	private final String message;
 
 	public ApiException(BaseResultCode code) {
 		this(code, code.message());
 	}
 
 	public ApiException(BaseResultCode code, String message) {
+		super(message);
 		this.code = code;
-		this.message = message;
+	}
+
+	public ApiException(BaseResultCode code, String msg, Throwable throwable) {
+		super(msg, throwable);
+		this.code = code;
+	}
+
+	public BaseResultCode getCode() {
+		return code;
 	}
 }
