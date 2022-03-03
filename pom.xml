@@ -6,16 +6,16 @@
 	<parent>
 		<groupId>com.byaoh.cloud</groupId>
 		<artifactId>spring-cloud-alibaba-learning-parent</artifactId>
-		<version>0.0.25</version>
+		<version>0.0.27</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<artifactId>spring-cloud-alibaba-learning-common</artifactId>
-	<version>0.0.02</version>
+	<version>${common-version}</version>
 
 	<properties>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -31,6 +31,11 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
 
