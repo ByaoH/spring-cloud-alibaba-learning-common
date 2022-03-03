@@ -10,6 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<packaging>jar</packaging>
 	<artifactId>spring-cloud-alibaba-learning-common</artifactId>
 	<version>${common-version}</version>
 
