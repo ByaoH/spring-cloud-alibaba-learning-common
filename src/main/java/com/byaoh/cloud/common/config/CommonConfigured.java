@@ -12,9 +12,4 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(CommonProperties.class)
 public class CommonConfigured {
-	private final CommonProperties commonProperties;
-
-	public CommonConfigured(CommonProperties commonProperties) {
-		this.commonProperties = commonProperties;
-	}
 }
