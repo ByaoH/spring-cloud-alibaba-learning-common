@@ -17,7 +17,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "common")
 public class CommonProperties {
 	/**
-	 * 测试
+	 * 系统管理员id
 	 */
-	private String test;
+	private Long systemUserId;
 }
