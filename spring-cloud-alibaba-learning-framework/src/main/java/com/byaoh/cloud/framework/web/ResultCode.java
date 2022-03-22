@@ -16,11 +16,14 @@ public enum ResultCode implements BaseResultCode {
 	 * 业务错误
 	 */
 	BUSINESS_ERROR(400, "业务错误"),
+	UNAUTHORIZED(401, "未认证"),
+	FORBIDDEN(403, "没有权限"),
 	/**
 	 * 服务应用异常
 	 */
 	FAILED(500, "操作失败"),
-	;
+
+	DATA_INTEGRITY_VIOLATION(531, "数据库约束冲突");
 
 	private final Integer code;
 	private final String message;

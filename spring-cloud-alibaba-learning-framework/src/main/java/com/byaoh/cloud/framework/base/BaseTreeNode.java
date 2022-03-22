@@ -3,7 +3,7 @@ package com.byaoh.cloud.framework.base;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
-import com.byaoh.cloud.framework.exception.BusinessException;
+import com.byaoh.cloud.framework.exception.ApiException;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -99,7 +99,7 @@ public abstract class BaseTreeNode<T extends BaseTreeNode<T>> implements Seriali
 		if (data.size() == 1) {
 			return data.iterator().next();
 		} else {
-			throw new BusinessException("构建出多个根节点");
+			throw new ApiException("构建出多个根节点");
 		}
 	}
 
@@ -146,7 +146,7 @@ public abstract class BaseTreeNode<T extends BaseTreeNode<T>> implements Seriali
 	 */
 	private void batchSetNodeId(Collection<T> root) {
 		if (CollUtil.isEmpty(root)) {
-			throw new BusinessException("节点为空");
+			throw new ApiException("节点为空");
 		}
 		for (BaseTreeNode<T> item : root) {
 			// 父节点不存在 父id为 -1

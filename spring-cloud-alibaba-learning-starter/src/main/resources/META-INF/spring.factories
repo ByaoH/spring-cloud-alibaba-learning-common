@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.byaoh.cloud.common.CommonConfigure
+com.byaoh.cloud.common.CommonConfigure,\
+com.byaoh.cloud.common.redis.RedisConfig

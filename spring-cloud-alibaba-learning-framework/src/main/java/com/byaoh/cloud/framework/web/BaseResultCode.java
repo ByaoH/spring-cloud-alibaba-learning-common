@@ -1,12 +1,14 @@
 package com.byaoh.cloud.framework.web;
 
+import java.io.Serializable;
+
 /**
  * BaseMallCode
  *
  * @author luliangyu
  * @date 2021-07-16 14:11
  */
-public interface BaseResultCode {
+public interface BaseResultCode extends Serializable {
 	/**
 	 * 响应信息
 	 *
