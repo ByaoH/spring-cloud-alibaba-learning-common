@@ -17,7 +17,7 @@ public enum ResultCode implements BaseResultCode {
 	 */
 	BUSINESS_ERROR(400, "业务错误"),
 	UNAUTHORIZED(401, "未认证"),
-	FORBIDDEN(403, "没有权限"),
+	FORBIDDEN(403, "未授权"),
 	/**
 	 * 服务应用异常
 	 */
