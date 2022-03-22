@@ -17,6 +17,9 @@ import java.io.Serializable;
 public class SnowflakeGenerator implements IdentifierGenerator {
 	private static final Snowflake SNOWFLAKE = IdUtil.getSnowflake();
 
+	public SnowflakeGenerator() {
+	}
+
 	@Override
 	public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
 		return SNOWFLAKE.nextId();
