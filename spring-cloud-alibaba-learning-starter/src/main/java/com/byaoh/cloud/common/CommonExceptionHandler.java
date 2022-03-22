@@ -32,8 +32,8 @@ import java.util.stream.Collectors;
  * @author ruoyi
  */
 @RestControllerAdvice
-public class GlobalExceptionHandler {
-	private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+public class CommonExceptionHandler {
+	private static final Logger log = LoggerFactory.getLogger(CommonExceptionHandler.class);
 
 	/**
 	 * 请求方式不支持

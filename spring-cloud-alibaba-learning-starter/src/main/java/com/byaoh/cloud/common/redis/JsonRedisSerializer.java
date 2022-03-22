@@ -1,11 +1,11 @@
 package com.byaoh.cloud.common.redis;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
 
-import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * JSON序列化
@@ -25,20 +25,12 @@ public class JsonRedisSerializer<T> implements RedisSerializer<T> {
 
 	@Override
 	public byte[] serialize(T t) throws SerializationException {
-		try {
-			return OBJECT_MAPPER.writeValueAsBytes(t);
-		} catch (JsonProcessingException e) {
-			throw new SerializationException("redis序列化失败", e);
-		}
+		return JSON.toJSONString(t).getBytes(StandardCharsets.UTF_8);
 	}
 
 	@Override
 	public T deserialize(byte[] bytes) throws SerializationException {
-		try {
-			return OBJECT_MAPPER.readValue(bytes, this.clazz);
-		} catch (IOException e) {
-			throw new SerializationException("redis 反序列化失败", e);
-		}
+		return JSON.parseObject(bytes, clazz);
 	}
 
 	@Override
