@@ -2,7 +2,6 @@ package com.byaoh.cloud.common.dataobj;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
@@ -25,7 +24,6 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-@ToString
 public abstract class BaseDo implements Serializable {
 
 	private static final long serialVersionUID = 2111109988936237205L;
