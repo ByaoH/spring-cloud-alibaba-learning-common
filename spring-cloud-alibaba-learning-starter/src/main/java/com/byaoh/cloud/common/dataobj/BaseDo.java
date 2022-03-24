@@ -4,13 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,11 +29,6 @@ import java.util.Date;
 public abstract class BaseDo implements Serializable {
 
 	private static final long serialVersionUID = 2111109988936237205L;
-	/** id */
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@GenericGenerator(name = "snowFlakeId", strategy = "com.byaoh.cloud.framework.base.SnowflakeGenerator")
-	private Long id;
 
 	/** 创建人 */
 	@CreatedBy
