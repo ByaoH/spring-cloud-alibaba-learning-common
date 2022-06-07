@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -17,7 +17,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @author l
  * @date 2022/3/21 下午5:38
  */
-@Configurable
+@Configuration
 public class RedisConfig {
 	@Bean
 	@SuppressWarnings(value = {"unchecked", "rawtypes"})
@@ -25,7 +25,7 @@ public class RedisConfig {
 		RedisTemplate<String, Object> template = new RedisTemplate<>();
 		template.setConnectionFactory(connectionFactory);
 
-		JsonRedisSerializer serializer = new JsonRedisSerializer<>(java.lang.Object.class);
+		JsonRedisSerializer serializer = new JsonRedisSerializer<>(Object.class);
 
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
